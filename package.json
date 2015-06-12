@@ -1,5 +1,5 @@
 {
-  "name": "DeliveryTruck",
+  "name": "deliverytruck",
   "version": "0.1.0",
   "description": "A cloud deployment tool",
   "main": "index.js",
