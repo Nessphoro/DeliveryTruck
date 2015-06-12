@@ -1,0 +1,34 @@
+{
+  "name": "DeliveryTruck",
+  "version": "0.1.0",
+  "description": "A cloud deployment tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nessphoro/DeliveryTruck.git"
+  },
+  "keywords": [
+    "cloud",
+    "deployment"
+  ],
+  "preferGlobal": "true",
+  "bin": {
+    "truck": "index.js"
+  },
+  "author": "Pavlo Malynin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nessphoro/DeliveryTruck/issues"
+  },
+  "homepage": "https://github.com/Nessphoro/DeliveryTruck#readme",
+  "dependencies": {
+    "async": "^1.2.1",
+    "asyncblock": "^2.1.24",
+    "js-yaml": "^3.3.1",
+    "minimist": "^1.1.1",
+    "ssh2": "^0.4.8"
+  }
+}
