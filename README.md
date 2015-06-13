@@ -8,7 +8,7 @@ Delivery Truck is a lightweight deployment tool that was developed as a solution
 npm install deliverytruck -g
 ```
 
-Let us imagine that your have created a genious Meteor application and are ready to deploy.
+Let us imagine that your have created a genius  Meteor application and are ready to deploy.
 You will certainly be updating it many times over and when you finally decide to push your code you'll have to go through the gruesome process of bundling, copying your files to the server, settings environment variables, etc. 
 The problem grows even bigger if you have multiple servers, at which point you're simply require some automation.
 
