@@ -11,7 +11,8 @@ function getRemoteLocalPair(file) {
     switch (typeof file) {
         case "string":
             if (file.indexOf("/") != -1) {
-                return { local: file, remote: file.split("/")[-1] };
+                var fSplit = file.split("/");
+                return { local: file, remote: fSplit[fSplit.length - 1] };
             }
             else {
                 return { local: file, remote: file };
@@ -29,7 +30,7 @@ function handleRemoteShell(shellFile, sshClient, flow) {
     handleCommandStage(shellFile, sshClient, flow);
 }
 function handleCommandStage(shellFile, sshClient, flow) {
-    sshClient.exec("/bin/bash -x " + shellFile, flow.add("exec", ["stream"]));
+    sshClient.exec("/bin/bash " + shellFile, flow.add("exec", ["stream"]));
     var result = flow.wait("exec");
     result.stream.on("close", flow.add("exit", ["code", "signal"]));
     result.stream.on("data", function (buffer) {
@@ -110,7 +111,7 @@ function processServer(config, server, options, flow) {
             throw err;
         }
         if (index != config.files.length - 1)
-            console.log("\t\t" + pair.local);
+            console.log("\t\t-" + pair.local);
     });
     console.log("\tUploaded");
     handleRemoteShell(getRemoteLocalPair(config.files[config.files.length - 1]).remote, sshClient, flow);

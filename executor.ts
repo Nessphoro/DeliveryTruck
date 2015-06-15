@@ -16,7 +16,8 @@ function getRemoteLocalPair(file)
         case "string":
             if(file.indexOf("/") != -1)
             {
-                return {local:file, remote:file.split("/")[-1]};
+                var fSplit = file.split("/");
+                return {local:file, remote:fSplit[fSplit.length-1]};
             }
             else
             {
@@ -140,7 +141,7 @@ function processServer(config, server, options, flow) {
             throw err;
         }
         if (index != config.files.length - 1)
-            console.log("\t\t" + pair.local);
+            console.log("\t\t-" + pair.local);
     });
     console.log("\tUploaded");
 
